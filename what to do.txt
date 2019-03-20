@@ -1,0 +1,47 @@
+1- sign up to https://signup.heroku.com/ (free)
+2- sign up to https://github.com/ (free too)
+3- then follow what explained in: https://medium.freecodecamp.org/how-to-deploy-a-nodejs-app-to-heroku-from-github-without-installing-heroku-on-your-machine-433bec770efe
+
+3.1 - create a folder myserver1
+3.2 - create a file package.json (copy contents from -3-)
+3.3 - create a file app.js (copy contents from -3-)
+	test your server: 
+			npm install 
+			npm start
+	then visit:
+			locahost:3000/
+
+3.4 - create a new github repository 
+	call it: myserver1
+        an press "create"
+
+3.5 Now: PUSH the node project to github
+	open a term in the same folder where the app.js is and type:
+		git init
+		git add . 
+		git remote add origin https://github.com/andrea270872/myserver.git
+		git push --set-upstream origin master
+	that should do it.
+    Check https://github.com/andrea270872/myserver to see if your files are there!
+
+3.6 Now in https://dashboard.heroku.com select "create new app"
+	-> name for example: stupid-sever-1 (do not use spaces or _ or special characters)
+	Then click on "create"
+
+3.7 Choose deployment method: github, then click "connect to github"
+	Github will ask you to confirm that Heroku has access to your github repositories, say yes 
+	then insert your github password.
+	Then: select which repository you want use: here it should be github.com/andrea270872/myserver
+	Finally: select Automatic Deployment, so as soon as the changes are pushed to GitHub, 
+		Heroku will pick them up and re-deploy the server
+
+3.8 In Heroku, go to "settings" menu. Add buildpack -> select node.js
+3.9 Go back to "deploy" menu, at the bottom, click on "deploy branch" -> DONE!
+	Now: click on "view" and it should send you to: https://stupid-sever-1.herokuapp.com/
+	where your server is up and running!
+
+
+4. now change the app.js (so it write a different message on the root page)
+   Then: git commit (and remove the # to the lines you want to commit)
+   And:  git push
+   Wait a few secs and open https://stupid-sever-1.herokuapp.com/ , it should look different! ;)
