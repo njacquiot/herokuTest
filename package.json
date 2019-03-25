@@ -1,7 +1,7 @@
 {
   "name": "anvaNodeServer1",
   "version": "1.0.0",
-  "description": "Andrea first server test",
+  "description": "Nico first server test",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
